@@ -4,13 +4,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchBtn = document.getElementById('search-btn');
 
     const shoes = [
-        { name: 'Nike Dunk Low Blue 98', price: '$189.999', image: '/placeholder.svg' },
-        { name: 'Nike Dunk High Black 98', price: '$189.999', image: '/placeholder.svg' },
-        { name: 'Nike Dunk High Blue 98', price: '$189.999', image: '/placeholder.svg' },
-        { name: 'Adidas Runner Dept', price: '$149.999', image: '/placeholder.svg' },
-        { name: 'Adidas Runner Dept', price: '$149.999', image: '/placeholder.svg' },
-        { name: 'Adidas Runner Dept', price: '$149.999', image: '/placeholder.svg' },
+        { name: 'Nike Dunk Low Blue 98', price: '$189.999', image: 'src/zapa niki.JPG' },
+        { name: 'Nike Dunk High Black 98', price: '$189.999', image: 'src/zapa niki 2.JPG' },
+        { name: 'Nike Dunk High Blue 98', price: '$189.999', image: 'src/zapa niki 3.JPG' },
+        { name: 'Nike Dunk High Black 98', price: '$189.999', image: 'src/niki 4.PNG' },
+        { name: 'Nike Dunk High Blue 98', price: '$189.999', image: 'src/zapa niki 5.JPG' },
+        { name: 'Adidas Runner Dept', price: '$149.999', image: 'src/zapa ardidas.JPG' },
+        { name: 'Adidas Runner Dept', price: '$149.999', image: 'src/zapa ardidas 2.webp' },
+        { name: 'Adidas Runner Dept', price: '$149.999', image: 'src/zapa ardidas 3.JPG' },
+        { name: 'Adidas Runner Dept', price: '$149.999', image: 'src/zapa ardidas 4.JPG' },
+        { name: 'Adidas Runner Dept', price: '$149.999', image: 'src/zapa ardidas 5.JPG' },
     ];
+
+    const shoes2 = [
+        { name: 'Nike Dunk Low Blue 98', price: '$189.999', image: 'src/zapa niki.JPG' },
+        { name: 'Nike Dunk High Black 98', price: '$189.999', image: 'src/zapa niki 2.JPG' },
+        { name: 'Nike Dunk High Blue 98', price: '$189.999', image: 'src/zapa niki 3.JPG' },
+        { name: 'Nike Dunk High Black 98', price: '$189.999', image: 'src/niki 4.PNG' },
+        { name: 'Nike Dunk High Blue 98', price: '$189.999', image: 'src/zapa niki 5.JPG' },
+    ]
 
     function renderShoes(shoesToRender) {
         shoeGrid.innerHTML = '';
