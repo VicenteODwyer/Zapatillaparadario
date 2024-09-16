@@ -47,4 +47,27 @@ document.addEventListener('DOMContentLoaded', () => {
             renderShoes(filteredShoes);
         }
     });
+
+    const popup = document.getElementById('popup');
+    const closePopup = document.getElementById('close-popup');
+    const abrirPopupBtn = document.getElementById('abrir-popup');
+
+    // Función para abrir el pop-up
+    function abrirPopup() {
+        const popup = document.getElementById('popup');
+        popup.style.display = 'block';
+    }
+
+    // Función para cerrar el pop-up
+    function cerrarPopup() {
+        const popup = document.getElementById('popup');
+        popup.style.display = 'none';
+    }
+
+    // Evento para abrir el pop-up al hacer clic en el botón
+    abrirPopupBtn.addEventListener('click', abrirPopup);
+
+    // Evento para cerrar el pop-up al hacer clic en el botón de cerrar
+    closePopup.addEventListener('click', cerrarPopup);
+
 });

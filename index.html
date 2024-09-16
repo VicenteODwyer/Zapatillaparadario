@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shoe Store</title>
     <link rel="stylesheet" href="Css/stylesheet.css">
+    <script src="Js/Script.js"></script>
 </head>
 <body>
     <header>
@@ -15,7 +16,7 @@
                 <button id="search-btn" aria-label="Search">🔍</button>
             </div>
             <div class="user-actions">
-                <button id="cart-btn" aria-label="Shopping Cart">🛒</button>
+                <button id="cart-btn" onclick="abrirPopup()" aria-label="Shopping Cart">🛒</button>
                 <img src="/placeholder.svg" alt="User" class="user-avatar">
             </div>
         </div>
@@ -34,6 +35,16 @@
             <div>Soporte</div>
         </div>
     </footer>
+
+    <!-- Agregar el pop-up aquí -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h2>Título del Pop-up</h2>
+            <p>Contenido del pop-up aquí.</p>
+            <button id="close-popup">Cerrar</button>
+        </div>
+    </div>
+
     <script src="Js/Script.js"></script>
 </body>
 </html>
