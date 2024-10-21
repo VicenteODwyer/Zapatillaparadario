@@ -70,6 +70,10 @@ footer .container {
     }
 }
 
+nav {
+    position: relative;
+}
+
 .popup {
     display: none;
     position: fixed;
@@ -90,6 +94,28 @@ footer .container {
     padding: 20px;
     border-radius: 5px;
     text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.popup-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#seguirComprando {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#seguirComprando:hover {
+    background-color: #555;
 }
 
 .formulario-compra {
@@ -157,10 +183,23 @@ button img {
 .nombre-apellido {
     display: flex;
     justify-content: space-between;
+    gap: 20px; /* Espacio entre los campos */
 }
 
 .nombre-apellido > div {
-    width: 48%;
+    flex: 1; /* Hace que cada div ocupe el mismo espacio */
+}
+
+.nombre-apellido input {
+    width: 100%; /* Asegura que el input ocupe todo el ancho del div padre */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+/* Para pantallas más pequeñas */
+@media (max-width: 600px) {
+    .nombre-apellido {
+        flex-direction: column;
+    }
 }
 
 .hamburger-menu {
