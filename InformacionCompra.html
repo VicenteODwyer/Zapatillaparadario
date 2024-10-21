@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de Compra</title>
+    <link rel="stylesheet" href="Css/stylesheet.css">
+</head>
+<body>
+    <main>
+        <div class="formulario-compra">
+            <div class="metodo-compra">
+                <h2>Metodo de compra</h2>
+                <form>
+                    <label for="metodo-pago">Visa</label>
+                    <select id="metodo-pago" name="metodo-pago">
+                        <option value="visa">Visa</option>
+                        <option value="mastercard">MasterCard</option>
+                    </select>
+
+                    <label for="numero-tarjeta">Numero de Tarjeta</label>
+                    <input type="text" id="numero-tarjeta" name="numero-tarjeta">
+
+                    <label for="fecha-vencimiento">Fecha de Vencimiento</label>
+                    <input type="text" id="fecha-vencimiento" name="fecha-vencimiento">
+
+                    <label for="codigo-seguridad">Codigo de Seguridad</label>
+                    <input type="text" id="codigo-seguridad" name="codigo-seguridad">
+
+                    <button type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg>
+                        Finalizar Compra
+                    </button>
+                </form>
+            </div>
+
+            <div class="datos-compra">
+                <h2>Datos de Compra</h2>
+                <form>
+                    <div class="nombre-apellido">
+                        <div>
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre">
+                        </div>
+                        <div>
+                            <label for="apellido">Apellido</label>
+                            <input type="text" id="apellido" name="apellido">
+                        </div>
+                    </div>
+
+                    <label for="direccion1">Direccion 1</label>
+                    <input type="text" id="direccion1" name="direccion1">
+
+                    <label for="direccion2">Direccion 2 (opcional)</label>
+                    <input type="text" id="direccion2" name="direccion2">
+
+                    <label for="pais">Pais</label>
+                    <input type="text" id="pais" name="pais">
+
+                    <label for="codigo">Codigo</label>
+                    <input type="text" id="codigo" name="codigo">
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div>Quienes somos</div>
+            <div>Metodos de pago</div>
+            <div>Soporte</div>
+        </div>
+    </footer>
+</body>
+</html>
