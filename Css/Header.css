@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+header {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.search-bar {
+    flex-grow: 1;
+    margin: 0 10px;
+}
+.search-bar input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+}
+.user-icon {
+    width: 32px;
+    height: 32px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+}
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.product-image {
+    flex: 1 1 300px;
+}
+.product-image img {
+    max-width: 100%;
+    height: auto;
+}
+.thumbnail-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+.thumbnail {
+    width: 60px;
+    height: 60px;
+    background-color: #ddd;
+    cursor: pointer;
+}
+.product-details {
+    flex: 1 1 300px;
+    padding: 0 20px;
+}
+.size-selector {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+.size-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    background-color: white;
+    cursor: pointer;
+}
+.size-button.selected {
+    background-color: black;
+    color: white;
+}
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.quantity-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+.add-to-cart {
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.hamburger-menu {
+    display: none;
+    position: fixed;
+    top: 60px; /* Ajusta según la altura de tu header */
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #f1f1f1;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.hamburger-menu.menu-open {
+    display: block;
+}
+
+.hamburger-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.hamburger-menu ul li {
+    margin-bottom: 10px;
+}
+
+.hamburger-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
