@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compra</title>
+    <link rel="stylesheet" href="Css/carlitos.css">
+    <link rel="stylesheet" href="Css/Header.css">
+    <script src="Js/hambur.js"></script>
+</head>
+<body>
+
+    <header>
+        <button id="menu-btn" aria-label="Menú">☰</button>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar Modelo" aria-label="Buscar Modelo" id="searchInput">
+        </div>
+        <button aria-label="Carrito de compras">🛒</button>
+        <div class="user-icon" role="img" aria-label="Icono de usuario"></div>
+    </header>
+    
+    <!-- Agregar el menú hamburguesa aquí -->
+    <nav id="hamburger-menu" class="hamburger-menu">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Sobre nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="carrito">
+        <div class="productos">
+            <h2>Carrito de compra</h2>
+            <div class="producto">
+                <img src="ruta_imagen_nike_dunk_high_blue.jpg" alt="Nike Dunk High Blue 98">
+                <div class="producto-info">
+                    <h3>Nike Dunk High Blue 98</h3>
+                    <p class="precio">$189.999</p>
+                </div>
+            </div>
+            <div class="producto">
+                <img src="ruta_imagen_nike_dunk_high_dark.jpg" alt="Nike Dunk High Dark 98">
+                <div class="producto-info">
+                    <h3>Nike Dunk High Dark 98</h3>
+                    <p class="precio">$189.999</p>
+                </div>
+            </div>
+        </div>
+        <div class="resumen">
+            <h2>Resumen Compra</h2>
+            <div class="resumen-item">
+                <span>Subtotal</span>
+                <span>$379.998</span>
+            </div>
+            <div class="resumen-item">
+                <span>Envío</span>
+                <span>Gratis</span>
+            </div>
+            <div class="codigo-postal">
+                <label for="postal">Código Postal</label>
+                <input type="text" id="postal">
+                <button class="calcular">Calcular</button>
+            </div>
+            <button class="finalizar">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div>
+                <h3>Contacto</h3>
+                <p>Email: info@tiendazapatos.com</p>
+            </div>
+            <div>
+                <h3>Enlaces rápidos</h3>
+                <ul>
+                    <li>Contacto</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Síguenos</h3>
+                <p>Facebook | Instagram | Twitter</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
