@@ -15,10 +15,11 @@ header {
 }
 .search-bar {
     flex-grow: 1;
-    margin: 0 10px;
+    margin: 0px;
+
 }
 .search-bar input {
-    width: 100%;
+    width: 95%;
     padding: 8px;
     border-radius: 20px;
     border: 1px solid #ddd;
