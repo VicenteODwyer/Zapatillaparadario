@@ -10,7 +10,31 @@ body {
     display: flex;
     flex-direction: column;
 }
-
+header {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.search-bar {
+    flex-grow: 1;
+    margin: 0 10px;
+}
+.search-bar input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+}
+.user-icon {
+    width: 32px;
+    height: 32px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+}
 main {
     flex: 1;
     display: flex;
