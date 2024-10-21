@@ -118,7 +118,7 @@ main {
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
 }
 
-.hamburger-menu.menu-open {
+.hamburger-menu.active {
     display: block;
 }
 
@@ -135,6 +135,25 @@ main {
     text-decoration: none;
     color: #333;
     font-size: 18px;
+}
+
+.hamburger-menu .submenu {
+    display: none;
+    padding-left: 20px;
+}
+
+.hamburger-menu .submenu.active {
+    display: block;
+}
+
+.hamburger-menu .has-submenu > a::after {
+    content: '▼';
+    margin-left: 5px;
+    font-size: 0.8em;
+}
+
+.hamburger-menu .has-submenu > a.active::after {
+    content: '▲';
 }
 
 footer {
@@ -165,4 +184,23 @@ footer .container {
     footer .container > div {
         margin-bottom: 10px;
     }
+}
+
+.submenu {
+    display: none;
+    padding-left: 20px;
+}
+
+.submenu.active {
+    display: block;
+}
+
+.has-submenu > a::after {
+    content: '▼';
+    margin-left: 5px;
+    font-size: 0.8em;
+}
+
+.has-submenu > a.active::after {
+    content: '▲';
 }
