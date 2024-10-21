@@ -3,6 +3,9 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 header {
     background-color: white;
@@ -37,6 +40,7 @@ main {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex-grow: 1;
 }
 .product-container {
     display: flex;
@@ -161,6 +165,7 @@ footer {
     color: white;
     padding: 10px 0;
     width: 100%;
+    margin-top: auto;
 }
 
 footer .container {
@@ -169,7 +174,7 @@ footer .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
-}
+} 
 
 @media (max-width: 768px) {
     .shoe-grid {
@@ -185,6 +190,7 @@ footer .container {
         margin-bottom: 10px;
     }
 }
+<<<<<<< HEAD
 
 .submenu {
     display: none;
@@ -204,3 +210,5 @@ footer .container {
 .has-submenu > a.active::after {
     content: '▲';
 }
+=======
+>>>>>>> 832e24e3ae52bb8c8ffea97e2efd7a1ce3cef99e
