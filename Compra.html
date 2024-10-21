@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Css/Compra.css">
+</head>
+<body>
+    <header>
+        <button aria-label="Menú">☰</button>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar Modelo" aria-label="Buscar Modelo" id="searchInput">
+        </div>
+        <button aria-label="Carrito de compras">🛒</button>
+        <div class="user-icon" role="img" aria-label="Icono de usuario"></div>
+    </header>
+    <main>
+        <div class="product-container">
+            <div class="product-image">
+                <img src="/placeholder.svg" alt="Nike Dunk High Blue 98" width="400" height="400" id="mainImage">
+                <div class="thumbnail-container">
+                    <div class="thumbnail" role="img" aria-label="Miniatura 1" data-src="/placeholder.svg"></div>
+                    <div class="thumbnail" role="img" aria-label="Miniatura 2" data-src="/placeholder.svg"></div>
+                    <div class="thumbnail" role="img" aria-label="Miniatura 3" data-src="/placeholder.svg"></div>
+                    <div class="thumbnail" role="img" aria-label="Miniatura 4" data-src="/placeholder.svg"></div>
+                </div>
+            </div>
+            <div class="product-details">
+                <h1>Nike Dunk High Blue 98</h1>
+                <p><strong>$189.999</strong></p>
+                <p><small>+10 de descuento pagando a través de transferencia bancaria</small></p>
+                <div>
+                    <h2>Talle</h2>
+                    <div class="size-selector">
+                        <button class="size-button">40</button>
+                        <button class="size-button">41</button>
+                        <button class="size-button">42</button>
+                        <button class="size-button">43</button>
+                        <button class="size-button">44</button>
+                    </div>
+                </div>
+                <div>
+                    <h2>Cantidad</h2>
+                    <div class="quantity-selector">
+                        <button class="quantity-button" aria-label="Disminuir cantidad" id="decreaseQuantity">-</button>
+                        <span id="quantity">1</span>
+                        <button class="quantity-button" aria-label="Aumentar cantidad" id="increaseQuantity">+</button>
+                    </div>
+                </div>
+                <button class="add-to-cart" id="addToCart">Agregar al Carrito</button>
+            </div>
+        </div>
+    </main>
+    <script src="Js/Compra.js"></script>
+</body>
+</html>

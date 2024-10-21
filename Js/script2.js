@@ -9,11 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Nike Dunk High Blue 98', price: '$189.999', image: 'src/zapa niki 3.JPG' },
         { name: 'Nike Dunk High Black 98', price: '$189.999', image: 'src/niki 4.PNG' },
         { name: 'Nike Dunk High Blue 98', price: '$189.999', image: 'src/zapa niki 5.JPG' },
-        { name: 'Adidas Runner Dept', price: '$149.999', image: 'src/zapa ardidas.JPG' },
-        { name: 'Adidas Runner Dept', price: '$149.999', image: 'src/zapa ardidas 2.webp' },
-        { name: 'Adidas Runner Dept', price: '$149.999', image: 'src/zapa ardidas 3.JPG' },
-        { name: 'Adidas Runner Dept', price: '$149.999', image: 'src/zapa ardidas 4.JPG' },
-        { name: 'Adidas Runner Dept', price: '$149.999', image: 'src/zapa ardidas 5.JPG' },
     ];
 
     function renderShoes(shoesToRender) {
@@ -25,14 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="${shoe.image}" alt="${shoe.name}">
                 <h3>${shoe.name}</h3>
                 <p>${shoe.price}</p>
-                
             `;
-            
-            // Redirigir al hacer clic en el elemento
-            shoeElement.addEventListener('click', () => {
-                window.location.href = 'Compra.html'; // Cambia la ruta según sea necesario
-            });
-
             shoeGrid.appendChild(shoeElement);
         });
     }
