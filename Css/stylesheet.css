@@ -171,3 +171,37 @@ button img {
 .nombre-apellido > div {
     width: 48%;
 }
+.hamburger-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: #f1f1f1;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.menu-items ul {
+    list-style-type: none;
+    padding: 50px 0 0 0;
+}
+
+.menu-items ul li {
+    padding: 10px 20px;
+}
+
+.menu-items ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+.menu-open {
+    left: 0;
+}
+#menu-btn {
+    z-index: 1001;
+    position: relative;
+}
+
