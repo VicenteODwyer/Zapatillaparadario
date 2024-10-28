@@ -1,3 +1,5 @@
+console.log('Script.js se está cargando');
+
 document.addEventListener('DOMContentLoaded', () => {
     const shoeGrid = document.getElementById('shoe-grid');
     const searchInput = document.getElementById('search-input');
@@ -41,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             shoe.name.toLowerCase().includes(query.toLowerCase())
         );
     }
+    
 
     renderShoes(shoes);
 
@@ -80,4 +83,44 @@ document.addEventListener('DOMContentLoaded', () => {
     // Evento para cerrar el pop-up al hacer clic en el botón de cerrar
     closePopup.addEventListener('click', cerrarPopup);
 
+    searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        const shoeItems = shoeGrid.getElementsByClassName('shoe-item');
+
+        Array.from(shoeItems).forEach(function(item) {
+            const modelo = item.getAttribute('data-modelo').toLowerCase();
+            if (modelo.includes(searchTerm)) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
 });
+
+function displayProducts(productsToDisplay) {
+    const productContainer = document.querySelector('.product-container');
+    productContainer.innerHTML = ''; // Limpiar el contenedor
+
+    productsToDisplay.forEach(product => {
+        const productElement = createProductElement(product);
+        productContainer.appendChild(productElement);
+    });
+}
+
+function createProductElement(product) {
+    const productDiv = document.createElement('div');
+    productDiv.className = 'product';
+    productDiv.innerHTML = `
+        <img src="${product.image}" alt="${product.name}">
+        <h3>${product.name}</h3>
+        <p>${product.price}</p>
+    `;
+    return productDiv;
+}
+
+// Asegúrate de que shoes sea una variable global
+window.shoes = shoes;
+
+// Hacer displayProducts accesible globalmente
+window.displayProducts = displayProducts;

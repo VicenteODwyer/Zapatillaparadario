@@ -76,9 +76,61 @@ document.addEventListener('DOMContentLoaded', function() {
                 talla: selectedSize.textContent,
                 cantidad: quantity
             });
-            alert('Producto agregado al carrito');
         } else {
             alert('Por favor, selecciona una talla');
         }
     });
+});
+
+// Agregar al final del archivo
+const cartPopup = document.getElementById('cartPopup');
+const addToCartBtn = document.getElementById('addToCart');
+const goToCartBtn = document.getElementById('goToCart');
+const continueShoppingBtn = document.getElementById('continueShopping');
+const sizeButtons = document.querySelectorAll('.size-button');
+const quantityElement = document.getElementById('quantity');
+
+// Variable para almacenar el talle seleccionado
+let selectedSize = null;
+
+// Manejador para los botones de talle
+sizeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Remover la clase active de todos los botones
+        sizeButtons.forEach(btn => btn.classList.remove('active'));
+        // Agregar la clase active al botón seleccionado
+        button.classList.add('active');
+        selectedSize = button.textContent;
+    });
+});
+
+// Función para validar que todo esté seleccionado
+function isValidPurchase() {
+    const quantity = parseInt(quantityElement.textContent);
+    return selectedSize && quantity > 0;
+}
+
+// Manejador para el botón de agregar al carrito
+addToCartBtn.addEventListener('click', () => {
+    if (isValidPurchase()) {
+        cartPopup.style.display = 'block';
+    } else {
+        alert('Por favor selecciona la cantidad');
+    }
+});
+
+goToCartBtn.addEventListener('click', () => {
+    window.location.href = '/carlitos.html'; // Ajusta la ruta según tu estructura
+});
+
+continueShoppingBtn.addEventListener('click', () => {
+    cartPopup.style.display = 'none';
+    window.location.href = '/index.html'; // Ajusta la ruta según tu estructura
+});
+
+// Cerrar el popup al hacer clic fuera
+window.addEventListener('click', (event) => {
+    if (event.target === cartPopup) {
+        cartPopup.style.display = 'none';
+    }
 });
