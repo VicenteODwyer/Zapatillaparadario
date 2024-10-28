@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Adidas Runner Dept', price: '$149.999', image: 'src/zapa ardidas.JPG' },
         { name: 'Adidas Runner Dept', price: '$149.999', image: 'src/zapa ardidas 2.webp' },
         { name: 'Adidas Runner Dept', price: '$149.999', image: 'src/zapa ardidas 3.JPG' },
-        { name: 'Adidas Runner Dept', price: '$149.999', image: 'src/zapa ardidas 4.JPG' },
+        { name: 'Adidas Runner Dept', price: '$149.999', image: 'src/arirasDAUMDAUMDAUMDANDAIMA.webp' },
         { name: 'Adidas Runner Dept', price: '$149.999', image: 'src/zapa ardidas 5.JPG' },
     ];
 
