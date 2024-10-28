@@ -52,12 +52,18 @@ main {
     display: flex;
     gap: 10px;
     margin-top: 10px;
+    justify-content: center;
 }
 .thumbnail {
-    width: 60px;
-    height: 60px;
-    background-color: #ddd;
+    width: 80px;
+    height: 80px;
     cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+.thumbnail.active {
+    opacity: 1;
+    border: 2px solid #000;
 }
 .product-details {
     flex: 1 1 300px;
@@ -103,4 +109,31 @@ main {
     border-radius: 20px;
     cursor: pointer;
     margin-top: 20px;
+}
+
+.carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
 }

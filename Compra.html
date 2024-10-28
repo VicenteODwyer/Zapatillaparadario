@@ -18,12 +18,16 @@
     <main>
         <div class="product-container">
             <div class="product-image">
-                <img src="/placeholder.svg" alt="Nike Dunk High Blue 98" width="400" height="400" id="mainImage">
+                <div class="carousel">
+                    <button class="carousel-button prev" aria-label="Anterior">❮</button>
+                    <img src="Src/yajirobe.webp" alt="Nike Dunk High Blue 98" width="400" height="400" id="mainImage">
+                    <button class="carousel-button next" aria-label="Siguiente">❯</button>
+                </div>
                 <div class="thumbnail-container">
-                    <div class="thumbnail" role="img" aria-label="Miniatura 1" data-src="/placeholder.svg"></div>
-                    <div class="thumbnail" role="img" aria-label="Miniatura 2" data-src="/placeholder.svg"></div>
-                    <div class="thumbnail" role="img" aria-label="Miniatura 3" data-src="/placeholder.svg"></div>
-                    <div class="thumbnail" role="img" aria-label="Miniatura 4" data-src="/placeholder.svg"></div>
+                    <img class="thumbnail active" src="Src/yajirobe.webp" alt="Miniatura 1" onclick="changeImage(0)">
+                    <img class="thumbnail" src="Src/yajirobe.webp" alt="Miniatura 2" onclick="changeImage(1)">
+                    <img class="thumbnail" src="Src/yajirobe.webp" alt="Miniatura 3" onclick="changeImage(2)">
+                    <img class="thumbnail" src="Src/niki 4.png" alt="Miniatura 4" onclick="changeImage(3)">
                 </div>
             </div>
             <div class="product-details">
@@ -53,5 +57,6 @@
         </div>
     </main>
     <script src="Js/Compra.js"></script>
+    <script src="Js/carrusel.js"></script>
 </body>
 </html>
