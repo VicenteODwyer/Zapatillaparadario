@@ -54,7 +54,7 @@ const zapatillas = [
     },
     {
         id: 5,
-        nombre: "Zapa 5",
+        nombre: "Adidas Alphaedge",
         precio: 159999,
         imagen: "Src/zapa5.webp",
         marca: "Nike",
@@ -67,10 +67,10 @@ const zapatillas = [
     },
     {
         id: 6,
-        nombre: "Zapa 6",
+        nombre: "Adidas Runner Stockx",
         precio: 159999,
         imagen: "Src/zapa6.webp",
-        marca: "Nike",
+        marca: "Adidas",
         imagenes: [
             "ruta/imagen2.jpg",
             "ruta/imagen2-2.jpg",
@@ -80,7 +80,7 @@ const zapatillas = [
     },
     {
         id: 7,
-        nombre: "Zapa 7",
+        nombre: "Nike Air Mag BTF",
         precio: 159999,
         imagen: "Src/zapa7.webp",
         marca: "Nike",
@@ -93,10 +93,10 @@ const zapatillas = [
     },
     {
         id: 8,
-        nombre: "Zapa 8",
+        nombre: "Adidas Campus 00s Green",
         precio: 159999,
         imagen: "Src/zapa8.webp",
-        marca: "Nike",
+        marca: "Adidas",
         imagenes: [
             "ruta/imagen2.jpg",
             "ruta/imagen2-2.jpg",
@@ -106,10 +106,10 @@ const zapatillas = [
     },
     {
         id: 9,
-        nombre: "Zapa 9",
+        nombre: "Adidas Campus 00s Gray",
         precio: 159999,
         imagen: "Src/zapa9.webp",
-        marca: "Nike",
+        marca: "Adidas",
         imagenes: [
             "ruta/imagen2.jpg",
             "ruta/imagen2-2.jpg",
@@ -119,7 +119,7 @@ const zapatillas = [
     },
     {
         id: 10,
-        nombre: "Zapa 10",
+        nombre: "Adidas Predator Yellow",
         precio: 159999,
         imagen: "Src/zapa10.webp",
         marca: "Nike",
