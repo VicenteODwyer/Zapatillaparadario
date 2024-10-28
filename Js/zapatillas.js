@@ -17,7 +17,7 @@ const zapatillas = [
         id: 2,
         nombre: "Adidas Superstar Classic",
         precio: 159999,
-        imagen: "ruta/imagen2.jpg",
+        imagen: "Src/arirasDAUMDAUMDAUMDANDAIMA.webp",
         marca: "adidas",
         imagenes: [
             "ruta/imagen2.jpg",
@@ -42,7 +42,7 @@ function generarZapatillas(filtro = '') {
         const zapatillaCard = document.createElement('div');
         zapatillaCard.className = 'shoe-card';
         zapatillaCard.innerHTML = `
-            <img src="${zapatilla.imagen}" alt="${zapatilla.nombre}">
+            <img src="${zapatilla.imagen}" alt="${zapatilla.nombre}" style="width: 128px; height: 128px; object-fit: contain;">
             <h3>${zapatilla.nombre}</h3>
             <p>$${zapatilla.precio}</p>
             <button onclick="irACompra(${zapatilla.id})">Comprar</button>
