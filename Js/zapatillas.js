@@ -57,7 +57,7 @@ const zapatillas = [
         nombre: "Adidas Alphaedge",
         precio: 159999,
         imagen: "Src/zapa5.webp",
-        marca: "Nike",
+        marca: "Adidas",
         imagenes: [
             "ruta/imagen2.jpg",
             "ruta/imagen2-2.jpg",
@@ -122,7 +122,7 @@ const zapatillas = [
         nombre: "Adidas Predator Yellow",
         precio: 159999,
         imagen: "Src/zapa10.webp",
-        marca: "Nike",
+        marca: "Adidas",
         imagenes: [
             "ruta/imagen2.jpg",
             "ruta/imagen2-2.jpg",
@@ -135,7 +135,7 @@ const zapatillas = [
 ];
 
 // Función para generar las tarjetas de zapatillas
-function generarZapatillas(filtro = '') {
+function generarZapatillas(filtroTexto = '', filtroMarca = '') {
     const shoeGrid = document.getElementById('shoe-grid');
     shoeGrid.innerHTML = '';
     
@@ -147,9 +147,21 @@ function generarZapatillas(filtro = '') {
     shoeGrid.style.maxWidth = '1200px'; // Ancho máximo del contenedor
     shoeGrid.style.margin = '0 auto'; // Centrar el contenedor
     
-    const zapatillasFiltradas = zapatillas.filter(zapatilla => 
-        zapatilla.nombre.toLowerCase().includes(filtro.toLowerCase())
-    );
+    let zapatillasFiltradas = zapatillas;
+    
+    // Aplicar filtro de texto si existe
+    if (filtroTexto) {
+        zapatillasFiltradas = zapatillasFiltradas.filter(zapatilla => 
+            zapatilla.nombre.toLowerCase().includes(filtroTexto.toLowerCase())
+        );
+    }
+    
+    // Aplicar filtro de marca si existe
+    if (filtroMarca) {
+        zapatillasFiltradas = zapatillasFiltradas.filter(zapatilla => 
+            zapatilla.marca.toLowerCase() === filtroMarca.toLowerCase()
+        );
+    }
     
     zapatillasFiltradas.forEach(zapatilla => {
         const zapatillaCard = document.createElement('div');
@@ -192,6 +204,37 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
             generarZapatillas(e.target.value);
+        });
+    }
+    
+    // Agregar listeners para los filtros de marca
+    const marcaLinks = document.querySelectorAll('[data-marca]');
+    marcaLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const marca = e.target.getAttribute('data-marca');
+            generarZapatillas('', marca);
+            
+            // Cerrar el menú hamburguesa después de seleccionar
+            const hamburgerMenu = document.getElementById('hamburger-menu');
+            if (hamburgerMenu) {
+                hamburgerMenu.classList.remove('active');
+            }
+        });
+    });
+    
+    // Agregar listener para "Inicio" para mostrar todas las zapatillas
+    const inicioLink = document.querySelector('.hamburger-menu ul li:first-child a');
+    if (inicioLink) {
+        inicioLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            generarZapatillas();
+            
+            // Cerrar el menú hamburguesa
+            const hamburgerMenu = document.getElementById('hamburger-menu');
+            if (hamburgerMenu) {
+                hamburgerMenu.classList.remove('active');
+            }
         });
     }
 });

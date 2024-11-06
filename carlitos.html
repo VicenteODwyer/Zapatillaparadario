@@ -7,16 +7,26 @@
     <link rel="stylesheet" href="Css/carlitos.css">
     <link rel="stylesheet" href="Css/Header.css">
     <script src="Js/hambur.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
 
     <header>
-        <button id="menu-btn" aria-label="Menú">☰</button>
+        <button id="menu-btn" aria-label="Menú" class="menu-icon">
+            <i class="fas fa-bars"></i>
+        </button>
         <div class="search-bar">
-            <input type="text" placeholder="Buscar Modelo" aria-label="Buscar Modelo" id="searchInput">
+            <input type="text" placeholder="🔍 Buscar Modelo" aria-label="Buscar Modelo" id="searchInput">
         </div>
-        <button aria-label="Carrito de compras">🛒</button>
-        <div class="user-icon" role="img" aria-label="Icono de usuario"></div>
+        <div class="header-icons">
+            <button class="cart-icon" aria-label="Carrito de compras">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">2</span>
+            </button>
+            <button class="user-icon" aria-label="Perfil de usuario">
+                <i class="fas fa-user"></i>
+            </button>
+        </div>
     </header>   
     
     <!-- Agregar el menú hamburguesa aquí -->
@@ -30,40 +40,84 @@
     </nav>
 
 
-    <div class="carrito">
-        <div class="productos">
-            <h2>Carrito de compra</h2>
-            <div class="producto">
-                <img src="Src/yajirobe.webp" alt="Nike Dunk High Blue 98">
-                <div class="producto-info">
-                    <h3>Nike Dunk High Blue 98</h3>
-                    <p class="precio">$189.999</p>
-                </div>
+    <div class="container">
+        <div class="progress-bar">
+            <div class="step active">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Carrito</p>
             </div>
-            <div class="producto">
-                <img src="Src/arirasDAUMDAUMDAUMDANDAIMA.webp" alt="Nike Dunk High Dark 98">
-                <div class="producto-info">
-                    <h3>Adidas Campus 00s KoRn</h3>
-                    <p class="precio">$616.999</p>
-                </div>
+            <div class="step">
+                <i class="fas fa-credit-card"></i>
+                <p>Pago</p>
             </div>
         </div>
-        <div class="resumen">
-            <h2>Resumen Compra</h2>
-            <div class="resumen-item">
-                <span>Subtotal</span>
-                <span>$379.998</span>
+
+        <div class="content-wrapper">
+            <div class="carrito">
+                <div class="productos">
+                    <h2>Mi Carrito <span class="producto-count">(2 productos)</span></h2>
+                    <div class="producto-card">
+                        <img src="Src/yajirobe.webp" alt="Nike Dunk High Blue 98">
+                        <div class="producto-info">
+                            <div class="producto-header">
+                                <h3>Nike Dunk High Blue 98</h3>
+                                <span class="precio">$189.999</span>
+                            </div>
+                            <div class="producto-details">
+                                <p class="talla">Talla: 42</p>
+                                <p class="color">Color: Azul</p>
+                            </div>
+                            <div class="producto-controls">
+                                <div class="cantidad-control">
+                                    <button class="cantidad-btn minus"><i class="fas fa-minus"></i></button>
+                                    <input type="number" value="1" min="1" max="10" class="cantidad-input">
+                                    <button class="cantidad-btn plus"><i class="fas fa-plus"></i></button>
+                                </div>
+                                <button class="eliminar"><i class="fas fa-trash"></i> Eliminar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <!-- Segundo producto similar -->
+                    </div>
+                </div>
+
+                <div class="resumen">
+                    <div class="resumen-card">
+                        <h2>Resumen de Compra</h2>
+                        <div class="resumen-items">
+                            <div class="resumen-item">
+                                <span>Subtotal</span>
+                                <span class="precio-total">$379.998</span>
+                            </div>
+                            <div class="resumen-item">
+                                <span>Envío</span>
+                                <span class="envio-gratis">¡Gratis! <i class="fas fa-gift"></i></span>
+                            </div>
+                            <div class="resumen-item total">
+                                <span>Total</span>
+                                <span class="precio-total">$379.998</span>
+                            </div>
+                            
+                            <div class="codigo-postal">
+                                <label for="postal">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Calcular tiempo de envío
+                                </label>
+                                <div class="postal-input">
+                                    <input type="text" id="postal" placeholder="Ingresa tu código postal">
+                                    <button class="calcular">Calcular</button>
+                                </div>
+                            </div>
+
+                            <button class="finalizar" onclick="window.location.href='InformacionCompra.html'">
+                                Continuar con la compra <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="resumen-item">
-                <span>Envío</span>
-                <span>Gratis</span>
-            </div>
-            <div class="codigo-postal">
-                <label for="postal">Código Postal</label>
-                <input type="text" id="postal">
-                <button class="calcular">Calcular</button>
-            </div>
-            <button class="finalizar">Finalizar Compra</button>
         </div>
     </div>
 
