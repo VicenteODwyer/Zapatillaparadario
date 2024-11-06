@@ -134,3 +134,28 @@ window.addEventListener('click', (event) => {
         cartPopup.style.display = 'none';
     }
 });
+
+// En tu función de agregar al carrito
+function agregarAlCarrito() {
+    if (isValidPurchase()) {
+        const zapatillaSeleccionada = JSON.parse(localStorage.getItem('zapatillaSeleccionada'));
+        const productoParaCarrito = {
+            id: zapatillaSeleccionada.id,
+            nombre: zapatillaSeleccionada.nombre,
+            precio: zapatillaSeleccionada.precio,
+            imagen: zapatillaSeleccionada.imagen,
+            talle: selectedSize,
+            cantidad: parseInt(quantityElement.textContent)
+        };
+
+        // Obtener el carrito actual
+        const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        carrito.push(productoParaCarrito);
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+
+        // Mostrar el popup de confirmación
+        cartPopup.style.display = 'block';
+    } else {
+        alert('Por favor selecciona un talle y la cantidad');
+    }
+}

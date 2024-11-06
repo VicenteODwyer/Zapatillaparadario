@@ -57,7 +57,7 @@ const zapatillas = [
         nombre: "Adidas Alphaedge",
         precio: 159999,
         imagen: "Src/zapa5.webp",
-        marca: "Nike",
+        marca: "Adidas",
         imagenes: [
             "ruta/imagen2.jpg",
             "ruta/imagen2-2.jpg",

@@ -6,9 +6,11 @@
     <title>Shoe Store</title>
     <link rel="stylesheet" href="Css/stylesheet.css">
     <link rel="stylesheet" href="Css/Header.css">
-    <script src="Js/Script.js"></script>
+    <script src="Js/search.js"></script>
+    <script src="Js/zapatillas.js"></script>
     <script src="Js/hambur.js"></script>
     <script src="Js/menu.js"></script>
+    <script src="Js/cart.js"></script>
 </head>
 <body>
     <header>
@@ -52,18 +54,38 @@
         </div>
     </footer>
 
-    <!-- Agregar el pop-up aquí -->
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <h2>Título del Pop-up</h2>
-            <p>Contenido del pop-up aquí.</p>
-            <button id="close-popup">Cerrar</button>
+   <!-- Modifica el botón del carrito en el navbar -->
+<div class="cart-container">
+    <button id="cart-button" class="cart-button" onclick="toggleCart()">
+        <img src="Src/carrito.png" alt="Carrito" class="cart-icon">
+    </button>
+    
+    <div id="cart-popup" class="cart-popup">
+        <div class="cart-popup-content">
+            <div id="cart-items"></div>
+            <div class="cart-footer">
+                <button id="ir-carrito" class="cart-button-ir">Ir al Carrito</button>
+            </div>
         </div>
     </div>
-
+</div>
     
-    <script src="Js/Script.js"></script>
-    <script src="Js/search.js"></script>
-    <script src="Js/zapatillas.js"></script>
+<!-- Agrega esto justo después del botón del carrito -->
+<div id="cart-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Carrito de Compras</h2>
+            <span class="close">&times;</span>
+        </div>
+        <div id="cart-items" class="modal-body">
+            <!-- Aquí se mostrarán los items del carrito -->
+        </div>
+        <div class="modal-footer">
+            <button id="ir-carrito" class="btn-carrito">Ir al Carrito</button>
+            <button id="seguir-comprando" class="btn-seguir">Seguir Comprando</button>
+        </div>
+    </div>
+</div>
+    
 </body>
 </html>

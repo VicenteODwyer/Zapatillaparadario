@@ -6,88 +6,110 @@
     <title>Información de Compra</title>
     <link rel="stylesheet" href="Css/stylesheet.css">
     <link rel="stylesheet" href="Css/Header.css">
-    <script src="Js/InfoCompra.js"></script>
+    <link rel="stylesheet" href="Css/comprafinal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="Js/InfoCompra.js" defer></script>
 </head>
 <body>
     <main>
         <div class="formulario-compra">
             <div class="metodo-compra">
-                <h2>Metodo de compra</h2>
-                <form>
-                    <label for="metodo-pago">Visa</label>
-                    <select id="metodo-pago" name="metodo-pago">
-                        <option value="visa">Visa</option>
-                        <option value="mastercard">MasterCard</option>
-                    </select>
+                <h2><i class="fas fa-credit-card"></i> Método de Pago</h2>
+                <form id="formularioCompra" onsubmit="return validarFormulario(event)">
+                    <div class="form-group">
+                        <label for="metodo-pago">Selecciona tu tarjeta</label>
+                        <select id="metodo-pago" name="metodo-pago">
+                            <option value="visa">💳 Visa</option>
+                            <option value="mastercard">💳 MasterCard</option>
+                        </select>
+                    </div>
 
-                    <label for="numero-tarjeta">Numero de Tarjeta</label>
-                    <input type="text" id="numero-tarjeta" name="numero-tarjeta">
+                    <div class="form-group">
+                        <label for="numero-tarjeta">Número de Tarjeta</label>
+                        <input type="text" id="numero-tarjeta" name="numero-tarjeta" placeholder="1234 5678 9012 3456">
+                    </div>
 
-                    <label for="fecha-vencimiento">Fecha de Vencimiento</label>
-                    <input type="text" id="fecha-vencimiento" name="fecha-vencimiento">
+                    <div class="tarjeta-detalles">
+                        <div class="form-group half">
+                            <label for="fecha-vencimiento">Vencimiento</label>
+                            <input type="text" id="fecha-vencimiento" name="fecha-vencimiento" placeholder="MM/YY">
+                        </div>
+                        <div class="form-group half">
+                            <label for="codigo-seguridad">CVV</label>
+                            <input type="text" id="codigo-seguridad" name="codigo-seguridad" placeholder="123">
+                        </div>
+                    </div>
 
-                    <label for="codigo-seguridad">Codigo de Seguridad</label>
-                    <input type="text" id="codigo-seguridad" name="codigo-seguridad">
-
-                    <button type="submit">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg>
+                    <button type="submit" class="btn-finalizar">
+                        <span class="icon">🛍️</span>
                         Finalizar Compra
                     </button>
-                    <nav>
-                        <div class="popup" id="compraExitosa">
-                            <div class="popup-content">
-                                <h2>GRACIAS POR TU COMPRA!!</h2>
-                                <a href="index.html" id="seguirComprando">Seguir Comprando</a>
-                            </div>
-                        </div>
-                    </nav>
                 </form>
             </div>
 
             <div class="datos-compra">
-                <h2>Datos de Compra</h2>
+                <h2><i class="fas fa-shipping-fast"></i> Datos de Envío</h2>
                 <form>
                     <div class="nombre-apellido">
-                        <div>
+                        <div class="form-group">
                             <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" name="nombre">
+                            <input type="text" id="nombre" name="nombre" placeholder="Juan">
                         </div>
-                        <div>
+                        <div class="form-group">
                             <label for="apellido">Apellido</label>
-                            <input type="text" id="apellido" name="apellido">
+                            <input type="text" id="apellido" name="apellido" placeholder="Pérez">
                         </div>
                     </div>
 
-                    <label for="direccion1">Direccion 1</label>
-                    <input type="text" id="direccion1" name="direccion1">
+                    <div class="form-group">
+                        <label for="direccion1">Dirección Principal</label>
+                        <input type="text" id="direccion1" name="direccion1" placeholder="Av. Principal 123">
+                    </div>
 
-                    <label for="direccion2">Direccion 2 (opcional)</label>
-                    <input type="text" id="direccion2" name="direccion2">
+                    <div class="form-group">
+                        <label for="direccion2">Dirección Alternativa (opcional)</label>
+                        <input type="text" id="direccion2" name="direccion2" placeholder="Depto, Piso, etc.">
+                    </div>
 
-                    <label for="pais">Pais</label>
-                    <input type="text" id="pais" name="pais">
-
-                    <label for="codigo">Codigo</label>
-                    <input type="text" id="codigo" name="codigo">
+                    <div class="ubicacion-detalles">
+                        <div class="form-group">
+                            <label for="pais">País</label>
+                            <input type="text" id="pais" name="pais" placeholder="Argentina">
+                        </div>
+                        <div class="form-group">
+                            <label for="codigo">Código Postal</label>
+                            <input type="text" id="codigo" name="codigo" placeholder="1234">
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
+
+        <div class="popup" id="compraExitosa">
+            <div class="popup-content">
+                <div class="success-icon">✨</div>
+                <h2>¡GRACIAS POR TU COMPRA!</h2>
+                <p>Tu pedido ha sido procesado con éxito</p>
+                <a href="index.html" id="seguirComprando" class="btn-seguir">Seguir Comprando</a>
+            </div>
+        </div>
     </main>
+
     <footer>
         <div class="container">
-            <div>
-                <p>Email: ouyea@correocaliente.cum</p>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>📧 ouyea@correocaliente.cum</p>
             </div>
-            <div>
-                <ul>
-                    <li>Contacto</li>
-                </ul>
-            </div>
-            <div>
-                <p>Facebook | Instagram | Twitter</p>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">Twitter</a>
+                </div>
             </div>
         </div>
     </footer>
-    <script src="Js/InfoCompra.js"></script>
 </body>
 </html>
