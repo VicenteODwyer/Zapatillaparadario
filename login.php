@@ -3,11 +3,7 @@ session_start();
 require_once 'php/config.php';
 require_once 'php/auth.php';
 
-// Redirigir si ya está autenticado
-if (isset($_SESSION['usuario_id'])) {
-    header('Location: index.php');
-    exit;
-}
+
 
 $error = '';
 $email = '';
@@ -22,30 +18,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {
             $conn = conectarDB();
             
-            $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email = ?");
+            // Primero verificamos si el email existe
+            $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email = ? LIMIT 1");
             $stmt->execute([$email]);
             $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
             
-            if ($usuario && password_verify($password, $usuario['password'])) {
-                // Regenerar ID de sesión por seguridad
-                session_regenerate_id(true);
-                
-                // Guardar datos en sesión
-                $_SESSION['usuario_id'] = $usuario['id_usuario'];
-                $_SESSION['nombre'] = $usuario['nombre'];
-                $_SESSION['apellido'] = $usuario['apellido'];
-                $_SESSION['email'] = $usuario['email'];
-                $_SESSION['tipo_usuario'] = $usuario['tipo_usuario'];
-                $_SESSION['ultimo_acceso'] = time();
-                
-                // Redirigir según el tipo de usuario
-                $redirect = $usuario['tipo_usuario'] === 'admin' ? 'admin/dashboard.php' : 'index.php';
-                header("Location: $redirect");
-                exit;
+            if ($usuario) {
+                // Si el usuario existe, verificamos la contraseña
+                if (password_verify($password, $usuario['password'])) {
+                    // Regenerar ID de sesión por seguridad
+                    session_regenerate_id(true);
+                    
+                    // Guardar datos en sesión
+                    $_SESSION['usuario_id'] = $usuario['id_usuario'];
+                    $_SESSION['nombre'] = $usuario['nombre'];
+                    $_SESSION['apellido'] = $usuario['apellido'];
+                    $_SESSION['email'] = $usuario['email'];
+                    $_SESSION['tipo_usuario'] = $usuario['tipo_usuario'];
+                    $_SESSION['ultimo_acceso'] = time();
+                    
+                    // Redirigir según el tipo de usuario
+                    $redirect = ($usuario['tipo_usuario'] === 'admin') ? 'admin/dashboard.php' : 'index.html';
+                    
+                    // Usar JavaScript para redirigir
+                    echo "<script>
+                            alert('¡Inicio de sesión exitoso!');
+                            window.location.href = '$redirect';
+                            </script>";
+                    exit;
+                } else {
+                    $error = "Contraseña incorrecta";
+                }
             } else {
-                $error = "Credenciales incorrectas";
-                sleep(1); // Prevenir ataques de fuerza bruta
+                $error = "El correo electrónico no está registrado";
             }
+            // Pequeña pausa para prevenir ataques de fuerza bruta
+            sleep(1);
         } catch(PDOException $e) {
             error_log("Error de login: " . $e->getMessage());
             $error = "Error en el sistema. Por favor, intente más tarde";
@@ -154,15 +162,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="login-container">
             <h1>Iniciar Sesión</h1>
             
-            <?php if (!empty($error)): ?>
-                <div class="error-message" role="alert">
-                    <?php echo htmlspecialchars($error); ?>
+            <?php if (isset($_GET['registro']) && $_GET['registro'] === 'exitoso'): ?>
+                <div class="success-message" role="alert">
+                    ¡Registro exitoso! Por favor, inicia sesión con tus credenciales.
                 </div>
             <?php endif; ?>
 
-            <?php if (isset($_GET['logout'])): ?>
-                <div class="success-message" role="alert">
-                    Sesión cerrada exitosamente.
+            <?php if (!empty($error)): ?>
+                <div class="error-message" role="alert">
+                    <?php echo htmlspecialchars($error); ?>
                 </div>
             <?php endif; ?>
 
@@ -210,9 +218,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </footer>
 
     <script>
-        // Validación del formulario del lado del cliente
+        // Modificar la validación del formulario
         document.querySelector('form').addEventListener('submit', function(e) {
-            const email = document.getElementById('email').value;
+            e.preventDefault(); // Prevenir envío automático
+            
+            const email = document.getElementById('email').value.trim();
             const password = document.getElementById('password').value;
             let isValid = true;
             
@@ -226,8 +236,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 alert('La contraseña debe tener al menos 6 caracteres');
             }
             
-            if (!isValid) {
-                e.preventDefault();
+            if (isValid) {
+                this.submit(); // Enviar el formulario si todo está correcto
             }
         });
     </script>

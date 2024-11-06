@@ -26,4 +26,3 @@ function registrarUsuario($nombre, $apellido, $email, $password) {
         return "Error: " . $e->getMessage();
     }
 }
-?> 
