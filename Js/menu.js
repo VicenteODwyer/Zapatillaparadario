@@ -3,36 +3,36 @@ console.log('Menu.js se está cargando');
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOMContentLoaded se ha disparado');
 
-    const menuBtn = document.getElementById('menu-btn');
-    const hamburgerMenu = document.getElementById('hamburger-menu');
-    const productosLink = document.getElementById('productos-link');
-    const productosSubmenu = document.getElementById('productos-submenu');
-    const marcaLinks = productosSubmenu.querySelectorAll('a');
+    const menuBtn = document.querySelector('.menu-btn');
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const productosLink = document.querySelector('#productos-link');
+    const productosSubmenu = document.querySelector('#productos-submenu');
+    let menuOpen = false;
 
-    // Toggle menú hamburguesa
-    menuBtn.addEventListener('click', function() {
-        hamburgerMenu.classList.toggle('active');
+    menuBtn.addEventListener('click', () => {
+        if(!menuOpen) {
+            menuBtn.classList.add('open');
+            hamburgerMenu.classList.add('active');
+            menuOpen = true;
+        } else {
+            menuBtn.classList.remove('open');
+            hamburgerMenu.classList.remove('active');
+            menuOpen = false;
+        }
     });
 
-    // Toggle submenú de productos
-    productosLink.addEventListener('click', function(e) {
+    // Cerrar menú al hacer clic fuera
+    document.addEventListener('click', (e) => {
+        if (!hamburgerMenu.contains(e.target) && !menuBtn.contains(e.target) && menuOpen) {
+            menuBtn.classList.remove('open');
+            hamburgerMenu.classList.remove('active');
+            menuOpen = false;
+        }
+    });
+
+    // Toggle submenu
+    productosLink.addEventListener('click', (e) => {
         e.preventDefault();
-        this.classList.toggle('active');
         productosSubmenu.classList.toggle('active');
     });
-
-    // Manejar clics en las marcas
-    marcaLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const marca = this.getAttribute('data-marca');
-            filtrarZapatosPorMarca(marca);
-            hamburgerMenu.classList.remove('active'); // Cerrar el menú hamburguesa
-        });
-    });
-
-    function filtrarZapatosPorMarca(marca) {
-        console.log(`Filtrando zapatos por marca: ${marca}`);
-        // Aquí iría la lógica para filtrar los zapatos
-    }
 });
