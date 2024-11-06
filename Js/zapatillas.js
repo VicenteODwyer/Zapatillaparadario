@@ -166,21 +166,12 @@ function generarZapatillas(filtroTexto = '', filtroMarca = '') {
     zapatillasFiltradas.forEach(zapatilla => {
         const zapatillaCard = document.createElement('div');
         zapatillaCard.className = 'shoe-card';
-        zapatillaCard.style.display = 'flex';
-        zapatillaCard.style.flexDirection = 'column';
-        zapatillaCard.style.alignItems = 'center';
-        zapatillaCard.style.padding = '15px';
-        zapatillaCard.style.border = '1px solid #ddd';
-        zapatillaCard.style.borderRadius = '8px';
-        zapatillaCard.style.width = '100%';
-        zapatillaCard.style.maxWidth = '220px';
-        zapatillaCard.style.margin = '0 auto';
         
         zapatillaCard.innerHTML = `
             <img src="${zapatilla.imagen}" alt="${zapatilla.nombre}" style="width: 100%; height: 180px; object-fit: contain;">
             <h3 style="margin: 10px 0; text-align: center;">${zapatilla.nombre}</h3>
             <p style="margin: 5px 0;">$${zapatilla.precio}</p>
-            <button onclick="irACompra(${zapatilla.id})" style="padding: 8px 16px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Comprar</button>
+            <button onclick="irACompra(${zapatilla.id})" class="comprar">Comprar</button>
         `;
         shoeGrid.appendChild(zapatillaCard);
     });
