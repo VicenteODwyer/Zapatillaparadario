@@ -1,0 +1,96 @@
+.register-container {
+    max-width: 360px;
+    padding: 2rem 2.5rem;
+    top: 55%;
+    background: #FFFFFF;
+    backdrop-filter: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 30px;
+    border: none;
+}
+
+.register-container h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #000000;
+    text-shadow: none;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 0.8rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+    color: #000000;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.form-group input {
+    width: 93%;
+    padding: 0.7rem;
+    font-size: 1rem;
+    color: #000000;
+    background: #FFFFFF;
+    border: 1.5px solid #000000;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #000000;
+    box-shadow: none;
+}
+
+.btn-login {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.8rem;
+    background: #000000;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    cursor: pointer;
+}
+
+.login-link {
+    margin-top: 0.8rem;
+    text-align: center;
+}
+
+.login-link a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #000000;
+    text-decoration: none;
+    letter-spacing: 0;
+}
+
+/* Eliminados los efectos decorativos de los costados */
+.register-container::before,
+.register-container::after {
+    display: none;
+}
+
+/* Ajuste para pantallas más pequeñas */
+@media (max-height: 700px) {
+    .register-container {
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+}
+
+@media (max-height: 600px) {
+    .register-container {
+        transform: translate(-50%, -50%) scale(0.85);
+    }
+} 

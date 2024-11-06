@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="Css/login.css">
+    <link rel="stylesheet" href="Css/Header.css">
+    <link rel="stylesheet" href="Css/register.css">
+    <script src="Js/hambur.js"></script>
+    <script src="Js/menu.js"></script>
+</head>
+<body>
+    <!-- Header igual al login -->
+    <header>
+        <button id="menu-btn" aria-label="Menú"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></button>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar Modelo" aria-label="Buscar Modelo" id="searchInput">
+        </div>
+        <button aria-label="Carrito de compras"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg></button>
+        <div class="user-icon" role="img" aria-label="Icono de usuario"></div>
+    </header>
+
+    <!-- Menú hamburguesa igual al login -->
+    <nav id="hamburger-menu" class="hamburger-menu">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li class="has-submenu">
+                <a href="#" id="productos-link">Productos</a>
+                <ul class="submenu" id="productos-submenu">
+                    <li><a href="#" data-marca="nike">Nike</a></li>
+                    <li><a href="#" data-marca="adidas">Adidas</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Sobre nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenedor de registro -->
+    <div class="login-container register-container">
+        <h2>Registro</h2>
+        <form action="/register" method="POST">
+            <div class="form-group">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirmar contraseña</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <button type="submit" class="btn-login">Registrarse</button>
+        </form>
+        <div class="login-link">
+            <a href="login.html">¿Ya tienes cuenta? Inicia sesión</a>
+        </div>
+    </div>
+</body>
+</html>
