@@ -120,7 +120,7 @@ addToCartBtn.addEventListener('click', () => {
 });
 
 goToCartBtn.addEventListener('click', () => {
-    window.location.href = '/carlitos.html'; // Ajusta la ruta según tu estructura
+    window.location.href = 'carlitos.html'; // Ruta corregida
 });
 
 continueShoppingBtn.addEventListener('click', () => {
