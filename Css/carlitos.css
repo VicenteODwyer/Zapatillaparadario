@@ -18,6 +18,7 @@ body {
 }
 
 .container {
+    position: relative;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -324,4 +325,31 @@ body {
     color: #666;
     font-size: 18px;
     font-weight: normal;
+}
+
+/* Añadir después de las variables globales */
+.back-button {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 55px;
+    height: 55px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.2s ease;
+    z-index: 1000;
+}
+
+.back-button:hover {
+    transform: translateX(-3px);
+}
+
+.back-button i {
+    font-size: 28px;
 }
