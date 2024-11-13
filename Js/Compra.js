@@ -120,12 +120,12 @@ addToCartBtn.addEventListener('click', () => {
 });
 
 goToCartBtn.addEventListener('click', () => {
-    window.location.href = 'carlitos.html'; // Ruta corregida
+    window.location.href = './carlitos.html'; // Ruta corregida
 });
 
 continueShoppingBtn.addEventListener('click', () => {
     cartPopup.style.display = 'none';
-    window.location.href = '/index.html'; // Ajusta la ruta según tu estructura
+    window.location.href = './index.html'; // Ajusta la ruta según tu estructura
 });
 
 // Cerrar el popup al hacer clic fuera
