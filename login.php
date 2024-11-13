@@ -3,8 +3,6 @@ session_start();
 require_once 'php/config.php';
 require_once 'php/auth.php';
 
-
-
 $error = '';
 $email = '';
 
